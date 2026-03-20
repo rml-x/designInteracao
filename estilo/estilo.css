@@ -16,8 +16,12 @@ html{
 
 div,h1 {
     padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+p,label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 
 /* Quadrado Styles */
@@ -46,7 +50,7 @@ div,h1 {
 
 
 .header {
-    background-color: #333;
+    background-color: #11223a;
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,6 +81,7 @@ div,h1 {
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .header a:hover {
@@ -122,7 +127,7 @@ button:active {
 
 /* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #11223a;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -133,4 +138,25 @@ button:active {
 .footer p {
     margin: 5px 0;
     font-size: 14px;
+}
+
+/* Index image */
+.img-interacao img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .img-interacao img {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .img-interacao img {
+        width: 70%;
+    }
 }
