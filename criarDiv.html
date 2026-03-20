@@ -5,47 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .quadrado {
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            height: 200px;
-            border: solid 2px red;
-            margin: 10px;
-            color:red;
-        }
-
-        #painel {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin: 5vh;
-            border: solid 2px black;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="estilo/estilo.css">
 </head>
 
 <body>
 
-    <header id="header"></header>
+    <header class="header"></header>
 
         <h1>Painel</h1>
         <div id="painel">
             <div class="quadrado">Oi</div>
+            <div id="cardId"></div>
+
         </div>
         <div id="controle">
             <button id="adicionarButton">Adicionar Novo Quadrado</button>
-            <br><br>
-            <label for="texto">Texto do novo quadrado</label><br>
+                <hr><hr>
+            <label for="texto">Texto do novo quadrado</label>
+            <br>
             <input type="text" id="texto" value="Ola">
-            <hr><hr>            
+            <br>
+            <label for="corquadrado">Cor do Quadrado</label>
+            <br>
+            <input type="color" id="corquadrado">
+            <br>
+            <label for="texto"> Cor do texto </label>
+            <br>
+            <input type="color" id="corfonte">
+
+
+                <hr><hr>            
             <label for="escolhido">Escolha um quadrado, o primeiro quadrado é o quadrado 1 e assim por diante:<br></label>
             <input type="number" id="escolhido" value="1">
-            <br><br>
+             <br><br>
             <button id="removerButton">Remover o Quadrado Escolhido</button><br>
             
 
@@ -53,36 +45,24 @@
             <label for="fontSizeButton">Alterar o Tamanho da fonte do Quadrado Escolhido</label>
             <br>
             <input type="range" min="10" max="50" name="font" id="fontSizeButton">
-            <hr><hr>
+            <br>
 
-            </div>
+            <label for="SquareSizeButton">Alterar o Tamanho do Quadrado Escolhido</label>
+            <br>
+            <input type="range" min="10" max="500" name="size" id="SquareSizeButton">
 
-        <footer id ="footer"></footer>
-    <script>
-        function adicionarQuadrado(){
-            let textoQuadrado=document.querySelector("#texto").value;
-            painel.innerHTML += `<div class="quadrado">${textoQuadrado}</div>`;
-        }
-        function removerQuadrado(){
-            let todosQuadrados = document.querySelectorAll(".quadrado");
-            let quadradoEscolhido = parseInt(document.querySelector("#escolhido").value)-1;
-            if (todosQuadrados[quadradoEscolhido]) {
-                todosQuadrados[quadradoEscolhido].remove()
-            }
-        }
-        function alterarFonte(){
-            let todosQuadrados = document.querySelectorAll(".quadrado");
-            let quadradoEscolhido = parseInt(document.querySelector("#escolhido").value)-1;
-            if (todosQuadrados[quadradoEscolhido]) {
-                todosQuadrados[quadradoEscolhido].style.fontSize = document.querySelector("#fontSizeButton").value + "px";
-            }
-        }
-        let painel = document.querySelector("#painel");
-        document.querySelector("#adicionarButton").addEventListener("click", adicionarQuadrado );
-        document.querySelector("#removerButton").addEventListener("click", removerQuadrado );
-        document.querySelector("#fontSizeButton").addEventListener("input", alterarFonte );
-    </script>
+                <hr><hr>
 
+                <input type="file" id="selectImageId" accept="image/*">
+                <br><br>
+                <button type="button" id="removeImageId">Remover Imagem</button>
+                <br><br>
+               
+
+                <hr><hr>
+        </div>
+
+        <footer class ="footer"></footer>
     <script src="main.js"></script>
     
     
