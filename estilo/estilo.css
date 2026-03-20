@@ -1,14 +1,27 @@
 /* Body Styles */
 
-.body {
+body {
         line-height: 1.6;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        padding: 0px;
+        margin: 0px;
     }
+
+html{
+    padding: 0px;
+    margin: 0px;
+}
+
+div,h1 {
+    padding: 20px;
+}
+
 
 
 /* Quadrado Styles */
+
 .quadrado {
     display: flex;
     align-items: center;
@@ -44,6 +57,20 @@
     gap: 20px;
     align-items: center;
 }
+
+.header ul li { 
+
+    display: inline;
+     
+}
+
+.header ul li a { 
+        padding: 3px 12px; 
+        display: inline-block;  
+        text-decoration: none; 
+        border-bottom:2px solid #ffffff; 
+        }
+
 
 .header a {
     color: #fff;
@@ -84,16 +111,6 @@ button:active {
     text-align: center;
     margin-top: 40px;
     border-top: 1px solid #555;
-}
-
-.footer a {
-    color: #4CAF50;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: #45a049;
 }
 
 .footer p {
