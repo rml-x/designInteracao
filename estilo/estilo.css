@@ -84,6 +84,23 @@ div,h1 {
 }
 
 /* Button Styles */
+
+#selectImageId::file-selector-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+
+}
+
+#selectImageId::file-selector-button:hover {
+    background-color: #45a049;
+}
+
 button {
     background-color: #4CAF50;
     color: white;
