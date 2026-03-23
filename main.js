@@ -15,14 +15,17 @@ function carregarFooter() {
 }
 
 function adicionarQuadrado(){
+    console.log('adicionarQuadrado called');
     let textoQuadrado = document.querySelector("#texto").value;
     let novoQuadrado = document.createElement('div');
     novoQuadrado.className = 'quadrado';
     novoQuadrado.textContent = textoQuadrado;
     novoQuadrado.style.color = selectedColor;
+    novoQuadrado.style.backgroundColor = selectedColorSquare;
     novoQuadrado.style.borderColor = selectedColorSquare;
     painel.appendChild(novoQuadrado);
 }
+
 function removerQuadrado(){
     let todosQuadrados = document.querySelectorAll(".quadrado");
     let quadradoEscolhido = parseInt(document.querySelector("#escolhido").value)-1;

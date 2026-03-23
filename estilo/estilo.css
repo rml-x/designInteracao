@@ -26,25 +26,35 @@ p,label{
 
 /* Quadrado Styles */
 
-.quadrado {
-    display: flex;
+.quadrado{
+    display:flex;
     align-items: center;
     justify-content: center;
     width: 200px;
     height: 200px;
     border: solid 2px red;
     margin: 10px;
+    object-fit: cover;
 }
 
-#painel {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 5vh;
-    border: solid 2px black;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    border: solid 2px rgb(116, 110, 110);
     padding: 20px;
     margin-bottom: 20px;
+    min-height: 200px;
+    gap: 20px;
+    margin: 1%
 }
+
+#cardId img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
 
 /* Header Styles */
 
@@ -85,13 +95,13 @@ p,label{
 }
 
 .header a:hover {
-    color: #4CAF50;
+    color: #3183f5;
 }
 
 /* Button Styles */
 
 #selectImageId::file-selector-button {
-    background-color: #4CAF50;
+    background-color: #11223a;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -103,11 +113,11 @@ p,label{
 }
 
 #selectImageId::file-selector-button:hover {
-    background-color: #45a049;
+    background-color: #05152c;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #11223a;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -118,12 +128,10 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #05152c;
 }
 
-button:active {
-    background-color: #3d8b40;
-}
+
 
 /* Footer Styles */
 .footer {
