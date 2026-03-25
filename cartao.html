@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo/estilo.css">
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+       <main class="editor-layout">
+        <section class="controls">
+            <h2>Personalização</h2>
+            
+            <div class="global-controls">
+                <label>Fundo do Cartão</label>
+                <input type="color" id="corFundo" value="#ffffff">
+                
+                <label>Adicionar Imagem</label>
+                <input type="file" id="inputImagem" accept="image/*">
+                
+                <button id="btnNovoTexto" class="btn-add">+ Adicionar Bloco de Texto</button>
+            </div>
+
+            <hr>
+
+            <div id="listaControles">
+                <p class="empty-msg">Nenhum texto adicionado ainda.</p>
+            </div>
+
+            <button id="btnLimpar" class="btn-danger">Limpar Tudo</button>
+        </section>
+
+        <section class="preview">
+            <div id="cartao" class="cartao-canvas">
+                <div id="containerElementos"></div>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer"></footer>
+        
+    <script src="main.js"></script>
+    
+    
+</body>
+
+</html>
