@@ -82,6 +82,7 @@ btnNovoTexto.addEventListener('click', () => {
         novaDiv.style.fontSize = e.target.value + 'px';
     });
 
+   
     inputField.focus();
     gerenciarMsgVazio();
 });
@@ -110,14 +111,23 @@ inputImagem.addEventListener('change', function() {
                     <span style="font-size:0.8rem; color:#64748b">Imagem inserida</span>
                     <button onclick="removerElemento('${id}')" style="color:red; border:none; background:none; cursor:pointer; font-size:0.8rem; font-weight:600">Remover Imagem</button>
                 </div>
+                <input type="range" id="imgsize-${id}" min="50" max="500" value="200" title="Tamanho da imagem">
             `;
+
             listaControles.appendChild(itemControle);
             
             gerenciarMsgVazio();
             this.value = ''; 
+
+            document.getElementById(`imgsize-${id}`).addEventListener('input', (e) => {
+                novaImg.style.width = e.target.value + 'px';
+            });
         };
         reader.readAsDataURL(file);
     }
+
+    
+
 });
 
 
