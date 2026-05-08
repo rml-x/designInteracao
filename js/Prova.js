@@ -1,5 +1,6 @@
 
 const prova = {
+
     titulo: "Prova de Design de Interação",
 
     questoes: [
@@ -32,11 +33,12 @@ const prova = {
             ],
             correta: 2 
         },
-        // mais questões aqui...
+        
     ]
 };
 
 function gerarQuestaoHTML(questao, indice) {
+
     const alternativasHTML = questao.alternativas.map((alt, i) => `
         <label>
             <input type="radio" name="q${indice}" value="${i}">
@@ -51,3 +53,107 @@ function gerarQuestaoHTML(questao, indice) {
         </div>
     `;
 }
+
+const todasQuestoesHTML = prova.questoes.map((q, i) => 
+    gerarQuestaoHTML(q, i)
+).join('');
+
+
+
+
+
+class MinhaProva extends HTMLElement {
+
+    constructor() {
+
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        
+        shadow.innerHTML = `
+
+            <style>
+
+            label {
+                display: block;
+                margin: 5px 0;
+            }
+            </style>
+            
+
+            <h2>${prova.titulo}</h2>
+
+            ${todasQuestoesHTML}
+
+            <br>
+            <button>Corrigir</button>
+
+            <div id="resultado"></div>
+        `
+
+        shadow.querySelector('button').addEventListener('click', () => {
+
+            let acertos = 0;
+            let resultadoHTML = '';
+
+            const resultado = shadow.querySelector('#resultado');
+
+            prova.questoes.forEach((questao, i) => {
+
+                const marcado = shadow.querySelector(`input[name="q${i}"]:checked`);
+
+                if (marcado && Number(marcado.value) === questao.correta) {
+                    acertos = acertos + 1;
+                }
+
+                 const respostaUsuario = marcado ? questao.alternativas[marcado.value] : "Não respondida";
+                 const respostaCorreta = questao.alternativas[questao.correta];
+
+                 resultadoHTML += `
+                    <div>
+             
+                        <p><strong>${questao.enunciado}</strong></p>
+                        <p>Sua resposta: ${respostaUsuario}</p>
+                        <p>Resposta correta: ${respostaCorreta}</p>
+                        
+                    </div>
+                 `;
+
+                 
+
+            });
+
+            let responderNovamente = `<button id="reiniciar">Responder novamente</button>`;
+
+            
+
+            if (acertos === prova.questoes.length) {
+                resultado.innerHTML = `<p>Você acertou todas as questões!</p> 
+                <p>Correção: </p>` +  responderNovamente + resultadoHTML;
+
+
+            }else { 
+                resultado.innerHTML =  `<p>Você acertou ${acertos} de ${prova.questoes.length} questões!</p>  
+                <p>Correção: </p>`+  responderNovamente + resultadoHTML;
+
+            }
+
+            
+            shadow.querySelector('#reiniciar').addEventListener('click', () => {
+                
+                shadow.querySelectorAll('input[type="radio"]').forEach(input => {
+                    input.checked = false;
+                });
+                
+                
+                resultado.innerHTML = '';
+            });
+
+
+            
+        });
+
+    }
+}
+
+customElements.define('minha-prova', MinhaProva);
