@@ -11,7 +11,7 @@ const prova = {
                 "A propriedade de um objeto que sugere como ele deve ser usado",
                 "Um tipo de fonte tipográfica"
             ],
-            correta: 1  // índice da alternativa correta (começa em 0)
+            correta: 1  
         },
 
         {
@@ -75,10 +75,48 @@ class MinhaProva extends HTMLElement {
 
             <style>
 
-            label {
+            p, h2, label, #resultado {
                 display: block;
                 margin: 5px 0;
+                padding: 0px 14px;
             }
+
+            #corrigir {
+                margin: 14px;
+                width: 100%;
+                padding: 12px;
+                background: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-top: 20px;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+
+
+            #corrigir:hover { background: #1d4ed8; }
+
+            #reiniciar {
+
+                margin: 14px;
+                width: 100%;
+                padding: 12px;
+                background: #0a3f09
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-top: 20px;
+                font-weight: bold;
+                transition: background 0.2s;
+            }
+
+            #resultado{
+                padding: 10px;
+            }
+
             </style>
             
 
@@ -87,7 +125,7 @@ class MinhaProva extends HTMLElement {
             ${todasQuestoesHTML}
 
             <br>
-            <button>Corrigir</button>
+            <button id = "corrigir" >Corrigir</button>
 
             <div id="resultado"></div>
         `
@@ -111,7 +149,7 @@ class MinhaProva extends HTMLElement {
                  const respostaCorreta = questao.alternativas[questao.correta];
 
                  resultadoHTML += `
-                    <div>
+                    <div id = "resultado">
              
                         <p><strong>${questao.enunciado}</strong></p>
                         <p>Sua resposta: ${respostaUsuario}</p>
