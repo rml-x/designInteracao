@@ -6,6 +6,20 @@ class MeuHeader extends HTMLElement {
 
         shadow.innerHTML = `
             <style>
+
+               
+             :host {
+                    display: block;
+                    background-color: #192a46;
+                }
+
+                h1{
+                    color: #ffffff;
+                    padding: 20px ;
+                    background-color: transparent;
+                    margin: 0;
+
+                }
                 
                 .nav {
                 
@@ -38,7 +52,6 @@ class MeuHeader extends HTMLElement {
                     color: #fff;
                     text-decoration: none;
                     font-size: 16px;~
-                    font: 
                     transition: color 0.3s ease;
                 }
 
@@ -56,7 +69,7 @@ class MeuHeader extends HTMLElement {
             <ul class="nav">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./cartao.html">Editor de Cartões</a></li>
-                <li><a href="./404.html">Trabalho 2</a></li>
+                <li><a href="./prova.html">Prova On-line</a></li>
                 <li><a href="./404.html">Trabalho 3</a></li>
             </ul>
             </nav>
