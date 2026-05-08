@@ -6,19 +6,18 @@ class MeuFooter extends HTMLElement {
 
         shadow.innerHTML = `
             <style>
-
-
             
-            .p {
-                color: #ffffff
-                font-size: 14px;
-                background-color: transparent;
+            
+            p {
+                display: center;
+                font-size: 9px;
+                color: white;
                 margin: 0;
-               
+                padding: 40px; 
             }
 
             :host {
-                display: block;
+                display: grid;
                 background-color: #192a46;
                 
             }
@@ -28,7 +27,7 @@ class MeuFooter extends HTMLElement {
             </style>
 
             
-           <p>&copy; 2026. Trabalho de Trabalho Design de Interação - TADS IFRS. Todos os direitos reservados.</p>
+           <p style="color: white;" fontSize ="9px;" >&copy; 2026. Trabalho de Trabalho Design de Interação - TADS IFRS. Todos os direitos reservados.</p>
             
             
 
