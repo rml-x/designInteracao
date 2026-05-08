@@ -1,24 +1,3 @@
-function carregarHeader() {
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('.header').innerHTML = data;
-        });
-}
-
-function carregarFooter() {
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('.footer').innerHTML = data;
-        });
-}
-
-window.onload = () => {
-    carregarHeader();
-    carregarFooter();
-};
-
 const btnNovoTexto = document.getElementById('btnNovoTexto');
 const containerElementos = document.getElementById('containerElementos');
 const listaControles = document.getElementById('listaControles');

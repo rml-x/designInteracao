@@ -33,6 +33,7 @@ const prova = {
             ],
             correta: 2 
         },
+
         
     ]
 };
@@ -140,11 +141,10 @@ class MinhaProva extends HTMLElement {
 
             
             shadow.querySelector('#reiniciar').addEventListener('click', () => {
-                
+
                 shadow.querySelectorAll('input[type="radio"]').forEach(input => {
                     input.checked = false;
                 });
-                
                 
                 resultado.innerHTML = '';
             });
