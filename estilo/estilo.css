@@ -19,3 +19,38 @@ main {
     padding: 20px;
 }
 
+.img-interacao {
+
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .editor-layout {
+        display: flex; 
+        flex-direction: column; 
+        padding: 10px;
+        margin: 10px auto;
+        gap: 20px;
+    }
+
+    .preview {
+        order: 1; 
+        width: 100%;
+    }
+
+    .controls {
+        order: 2;
+        width: 100%;
+        position: relative; 
+        top: 0;
+    }
+
+    .cartao-canvas {
+        max-width: 100%; 
+        aspect-ratio: auto;
+        min-height: 400px;
+    }
+}
+

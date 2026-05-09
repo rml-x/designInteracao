@@ -21,7 +21,7 @@ class MeuHeader extends HTMLElement {
 
                 }
                 
-                .nav {
+                nav {
                 
                     background-color: #192a46;
                     padding: 20px ;
