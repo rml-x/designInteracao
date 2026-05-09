@@ -188,7 +188,6 @@ class MinhaProva extends HTMLElement {
             });
 
 
-            
         });
 
     }
