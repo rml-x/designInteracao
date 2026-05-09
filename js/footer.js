@@ -9,7 +9,7 @@ class MeuFooter extends HTMLElement {
             
             
             p {
-                display: center;
+                text-align: center;
                 font-size: 9px;
                 color: white;
                 margin: 0;
@@ -22,12 +22,10 @@ class MeuFooter extends HTMLElement {
                 
             }
 
-               
-             
             </style>
 
             
-           <p style="color: white;" fontSize ="9px;" >&copy; 2026. Trabalho de Trabalho Design de Interação - TADS IFRS. Todos os direitos reservados.</p>
+           <p>&copy; 2026. Trabalho de Trabalho Design de Interação - TADS IFRS. Todos os direitos reservados.</p>
             
             
 

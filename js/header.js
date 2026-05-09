@@ -51,7 +51,7 @@ class MeuHeader extends HTMLElement {
                 
                     color: #fff;
                     text-decoration: none;
-                    font-size: 16px;~
+                    font-size: 16px;
                     transition: color 0.3s ease;
                 }
 
