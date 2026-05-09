@@ -21,8 +21,8 @@ main {
 
 .img-interacao {
 
-    max-width: 100%;
-    height: auto;
+    width: 480px;
+
 }
 
 @media (max-width: 768px) {
