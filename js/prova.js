@@ -75,6 +75,12 @@ class MinhaProva extends HTMLElement {
 
             <style>
 
+            :host {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
             p, h2, label, #resultado {
                 display: block;
                 margin: 5px 0;
@@ -82,7 +88,7 @@ class MinhaProva extends HTMLElement {
             }
 
             #corrigir {
-                margin: 14px;
+                margin: 14px auto;
                 width: 100%;
                 padding: 12px;
                 background: var(--primary);
@@ -100,11 +106,10 @@ class MinhaProva extends HTMLElement {
 
             #reiniciar {
 
-                margin: 14px;
+                margin: 14px auto;
                 width: 100%;
                 padding: 12px;
-                background: #0a3f09
-                color: white;
+                color: black;
                 border: none;
                 border-radius: 6px;
                 cursor: pointer;
@@ -115,6 +120,28 @@ class MinhaProva extends HTMLElement {
 
             #resultado{
                 padding: 10px;
+            }
+
+            @media (max-width: 768px) {
+
+                 :host {
+                    display: block;
+                    width: 100%;
+                }
+
+                p, h2, label {
+                    font-size: 18px; /* fonte maior */
+                }
+
+                .questao {
+                    width: 100%; 
+                    box-sizing: border-box;
+                }
+
+                #corrigir, #reiniciar {
+                    box-sizing: border-box;
+                    max-width: 100%;
+                }
             }
 
             </style>
@@ -149,14 +176,12 @@ class MinhaProva extends HTMLElement {
                  const respostaCorreta = questao.alternativas[questao.correta];
 
                  resultadoHTML += `
-                    <div id = "resultado">
-             
+                    <div class="item-resultado">
                         <p><strong>${questao.enunciado}</strong></p>
                         <p>Sua resposta: ${respostaUsuario}</p>
                         <p>Resposta correta: ${respostaCorreta}</p>
-                        
                     </div>
-                 `;
+                    `;
 
                  
 
