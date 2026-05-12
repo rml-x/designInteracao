@@ -12,8 +12,6 @@
    
  <meu-header></meu-header>
 
-
- <!-- onde o componente é usado -->
     <meu-template>
         <span slot="titulo">Sobre</span>
         <img slot="imagem" src="./img/interacao.webp" alt="imagem">
@@ -46,8 +44,17 @@
     <template id="meu-template">
 
         <style>
-
-        /* css da seção */
+            
+            div {
+            padding: 20px;
+        }
+        ::slotted(img) {
+            width: 100%;
+            border-radius: 8px;
+        }
+        ::slotted(span) {
+            font-size: 16px;
+        }
 
         </style>
         <div class="secao">
@@ -55,7 +62,7 @@
             <h1><slot name="titulo"></slot></h1>
             <slot name="imagem"></slot>
             <p><slot name="conteudo"></slot></p>
-            
+
         </div>
     </template>
 
