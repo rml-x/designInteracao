@@ -10,7 +10,7 @@ class MeuFooter extends HTMLElement {
             
             p {
                 text-align: center;
-                font-size: 9px;
+                font-size: 10px;
                 color: white;
                 margin: 0;
                 padding: 40px; 
@@ -19,6 +19,21 @@ class MeuFooter extends HTMLElement {
             :host {
                 display: grid;
                 background-color: #192a46;
+                
+            }
+
+            @media (max-width: 768px) {
+
+                 :host {
+                    display: block;
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 18px;
+                    padding-top:40px;
+                }
+
                 
             }
 
