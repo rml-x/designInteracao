@@ -79,6 +79,7 @@ class MinhaProva extends HTMLElement {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
+                padding-bottom: 80px;
             }
 
             p, h2, label, #resultado {
@@ -99,6 +100,7 @@ class MinhaProva extends HTMLElement {
                 margin-top: 20px;
                 font-weight: bold;
                 transition: background 0.2s;
+                margin-bottom: 40px;
             }
 
 

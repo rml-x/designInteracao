@@ -57,7 +57,13 @@ class MeuHeader extends HTMLElement {
 
                 .nav a:hover {
                     color: #3183f5;
-                }    
+                } 
+                     
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }  
 
 
             </style>
