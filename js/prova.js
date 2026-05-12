@@ -75,7 +75,6 @@ class MinhaProva extends HTMLElement {
 
             <style>
 
-            * { box-sizing: border-box; margin: 0; padding: 0; }
 
 
             :host {
