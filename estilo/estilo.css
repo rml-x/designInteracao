@@ -20,9 +20,9 @@ main {
 }
 
 
- .titulo-sobre{
-             font-size: 2rem;
-        }
+.titulo-sobre{
+    font-size: 2rem;
+}
 
 
 @media (max-width: 768px) {

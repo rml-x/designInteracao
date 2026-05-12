@@ -75,6 +75,9 @@ class MinhaProva extends HTMLElement {
 
             <style>
 
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+
+
             :host {
                 display: block;
                 width: 100%;
@@ -132,7 +135,7 @@ class MinhaProva extends HTMLElement {
                 }
 
                 p, h2, label {
-                    font-size: 18px; /* fonte maior */
+                    font-size: 18px; 
                 }
 
                 .questao {
