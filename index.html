@@ -12,65 +12,58 @@
    
  <meu-header></meu-header>
 
-    <main>
-        <section>
 
-            <h1>Sobre</h1>
+ <!-- onde o componente é usado -->
+    <meu-template>
+        <span slot="titulo">Sobre</span>
+        <img slot="imagem" src="./img/interacao.webp" alt="imagem">
+        <span slot="conteudo">
 
-            <div class="img-interacao">
-                <picture>
-                    <source 
-                        srcset="./img/interacao.webp" 
-                        type="image/webp"
-                        media="(min-width: 1200px)">
-                    <source 
-                        srcset="./img/interacao2.webp" 
-                        type="image/webp"
-                        media="(min-width: 800px)">
-                    <img 
-                        src="./img/interacao3.webp" 
-                        fetchpriority="low" 
-                        alt="imagem" 
-                        width="400" 
-                        height="300">
-                </picture>
-            </div>
+                            Este site servira para hospedar os trabalhos da disciplina de Design de interação
+                            desenvolvidos durante o semestre 1/2026.
+                            <br>
+                            Disciplina focada em projetar o comportamento
+                            e as interações entre usuários e produtos/serviços digitais
+                            (apps, sites, sistemas), definindo como as pessoas executam 
+                            ações e como o sistema responde. Seu objetivo é criar experiências 
+                            intuitivas,eficientes e agradáveis, com foco na usabilidade, 
+                            feedback claro e fluidez, indo além da estética para garantir que
+                            o usuário alcance seus objetivos com facilidade.
+                            <br>
+                            No curso de TADS do IFRS Campus Rio Grande essa disciplina é
+                            parte do grupo de Desenvolvimento de Aplicações que concentra-se nos 
+                            saberes e fazeres
+                            necessários para atender os usuários finais, relacionado às práticas de
+                            programação para o front-end, design de interfaces com o usuários e
+                            desenvolvimento de aplicativos completos, tratando de usabilidade,
+                            acessibilidade, relação humano e tecnologia até o projeto de aplicativos
+                            que executam em clientes e no espaço de usuário.
 
-            <div class="textos">
+                        </span>
+    </meu-template>
 
-                <p>
-                    Este site servira para hospedar os trabalhos da disciplina
-                    desenvolvidos durante o semestre 1/2026.
-                </p>
+   
+    <template id="meu-template">
 
-                <p>
-                    Disciplina focada em projetar o comportamento
-                    e as interações entre usuários e produtos/serviços digitais
-                    (apps, sites, sistemas), definindo como as pessoas executam 
-                    ações e como o sistema responde. Seu objetivo é criar experiências 
-                    intuitivas,eficientes e agradáveis, com foco na usabilidade, 
-                    feedback claro e fluidez, indo além da estética para garantir que
-                    o usuário alcance seus objetivos com facilidade.
-                </p>
+        <style>
 
-                <p>No curso de TADS do IFRS Campus Rio Grande essa disciplina é
-                    parte do grupo de Desenvolvimento de Aplicações que concentra-se nos 
-                    saberes e fazeres
-                    necessários para atender os usuários finais, relacionado às práticas de
-                    programação para o front-end, design de interfaces com o usuários e
-                    desenvolvimento de aplicativos completos, tratando de usabilidade,
-                    acessibilidade, relação humano e tecnologia até o projeto de aplicativos
-                    que executam em clientes e no espaço de usuário. </p>
-            </div>
-           
-        </section>
+        /* css da seção */
 
-    </main>
+        </style>
+        <div class="secao">
+
+            <h1><slot name="titulo"></slot></h1>
+            <slot name="imagem"></slot>
+            <p><slot name="conteudo"></slot></p>
+            
+        </div>
+    </template>
 
     <meu-footer></meu-footer>
 
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/template.js"></script>
 
 
     <script src="js/main.js"></script>
