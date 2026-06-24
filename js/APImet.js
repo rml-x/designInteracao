@@ -1,19 +1,25 @@
 
-function setAction(form) {
-  const url = `https://brasilapi.com.br/docs#tag/CPTEC/operation/climapredictionwithoutdays/cptec/v1/clima/previsao/${cityCode}/${days}`;
+function setAction(form) {   
+    
+    const cityCodeInput = document.getElementById("CityCode");
+    const daysInput = document.getElementById("days");
 
-  fetch(
-    url,
-    {            
-        headers: { "Content-Type": "application/json" },            
-        method: "GET",
-    }
-   )
-  .then(data => data.json())
-  .then((json) => {
-    //alert(JSON.stringify(json));
-    document.getElementById('response');  
-    document.innerHTML('response')   
-  });
-  return false;
+    const cityCode = cityCodeInput.value;
+    const days = daysInput.value;
+
+    const url = `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}/${days}`;
+
+
+    fetch(
+        url,
+        {            
+            headers: { "Content-Type": "application/json" },            
+            method: "GET",
+        }
+    )
+    .then(data => data.json())
+    .then((json) => {
+        document.getElementById('response').innerHTML = JSON.stringify(json);  
+    });
+    return false;
 }
