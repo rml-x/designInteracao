@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API1 Page</title>
+    <link rel="stylesheet" href="estilo/estilo.css">
+
+</head>
+<body>
+    <meu-header></meu-header>
+
+    <h1>Previsão do Tempo</h1>
+    <p>Essa página da uma previsão meteorológica de determinado município para até 6 dias.</p>
+    <br>
+
+    <form>
+        Código da cidade:<br>
+        <input type="number" name="CodCidade" id="CodCidade"><br>
+
+        Dias:<br>
+        <input type="number" name="QntDias" id="QntDias" min="1" max="6"><br>
+
+        <input type="button" value="Send"><br>
+    </form>
+    <div id="response"></div>
+
+
+    <meu-footer></meu-footer>
+
+    <script src="js/APImet.js"></script>
+
+    <script src="js/footer.js"></script>
+
+    <script src="js/header.js"></script>
+
+  
+</body>
+</html>
