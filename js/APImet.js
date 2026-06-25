@@ -69,7 +69,7 @@ function setAction(cityCode, CityName) {
     const url = `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}/${days}`;
 
     document.getElementById('cidade').innerHTML = '';
-    
+
     fetch(
         url,
         {            
@@ -84,7 +84,28 @@ function setAction(cityCode, CityName) {
         return data.json();
     })
     .then((json) => {
-        document.getElementById('response').innerHTML = JSON.stringify(json);  
+
+        if (json.length === 0) {
+            throw new Error("sem resultado!!");
+        }
+
+        const cabecalho = `<strong>${json.cidade} - ${json.estado}, atualizado em: ${json.atualizado_em}</strong><br>`;
+
+        const htmlTemplate = json.clima.map( item => {
+            return `
+
+            <div class="previsao-card")">
+           <p> <strong> Data: ${item.data} </strong> <br>
+            Condição: ${item.condicao_desc}<br>
+            Temperatura Mínima: ${item.min}<br>
+            Temperatura Máxima: ${item.max}<br>
+            Indice UV: ${item.indice_uv}</p>
+            </div>
+            `;
+        });
+
+        const finalHtml = cabecalho + htmlTemplate.join('');
+        document.getElementById('response').innerHTML = finalHtml;
     })
     .catch(error => {
         console.error(error);
