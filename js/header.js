@@ -77,7 +77,7 @@ class MeuHeader extends HTMLElement {
                 <li><a href="./cartao.html">Editor de Cartões</a></li>
                 <li><a href="./prova.html">Prova On-line</a></li>
                 <li><a href="./api1.html">API 1</a></li>
-                <li><a href="">API 2</a></li>
+                <li><a href="./api2.html">API 2</a></li>
             </ul>
             </nav>
 
