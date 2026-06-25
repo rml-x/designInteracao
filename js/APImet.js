@@ -36,13 +36,18 @@ function setSearch(form) {
 
         const htmlTemplate= json.map( item => {
             return `
-            <div class="cidade-card" onclick="setAction('${item.id}')">
-                <h3>${item.nome}, ${item.estado}, ${item.regiao}</h3>
+            <style>
+                .cidade-card:hover {
+                    border:1px solid ;
+                }
+            </style>
+            <div class="cidade-card" onclick="setAction('${item.id}','${item.nome}')">
+                <p>${item.nome}, ${item.estado}, ${item.regiao}</p>
             </div>
             `;
         });
 
-        const finalHtml = htmlTemplate.join(`<br>`);
+        const finalHtml = htmlTemplate.join('');
         document.getElementById('cidade').innerHTML = finalHtml;
 
     })
@@ -55,15 +60,16 @@ function setSearch(form) {
 }
 
 
-function setAction(cityCode) {   
-    
-    const daysInput = document.getElementById("days");
+function setAction(cityCode, CityName) {
 
+    const cityNameLocal = document.getElementById('CityName').value = CityName;
+    const daysInput = document.getElementById("days");
     const days = daysInput.value;
 
     const url = `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${cityCode}/${days}`;
 
-
+    document.getElementById('cidade').innerHTML = '';
+    
     fetch(
         url,
         {            

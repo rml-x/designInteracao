@@ -8,6 +8,15 @@
 
 </head>
 <body>
+    <style>
+        #cidade{
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #050518;
+        }
+
+    
+    </style>
     <meu-header></meu-header>
 
     <h1>Previsão do Tempo</h1>
@@ -15,14 +24,15 @@
     <br>
 
     <form>
+        Dias(obrigatório):<br><input type="number" name="days" id="days" min="1" max="6" required>
+        <br>
+
         Nome da cidade:<br><input type="text" id="CityName" onkeyup="setSearch()"><br>
+        <div id="cidade"></div><br>
 
-        Dias:<br><input type="number" name="days" id="days" min="1" max="6"><br>
-
-        <input type="button" value="Send" onclick="setAction()"><br>
     </form>
     <br>
-    <div id="cidade"></div><br>
+    
     <div id="response"></div><br>
 
 
