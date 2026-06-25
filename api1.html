@@ -15,15 +15,15 @@
     <br>
 
     <form>
-        Código da cidade:<br>
-        <input type="number" name="CityCode" id="CityCode"><br>
+        Nome da cidade:<br><input type="text" id="CityName" onkeyup="setSearch()"><br>
 
-        Dias:<br>
-        <input type="number" name="days" id="days" min="1" max="6"><br>
+        Dias:<br><input type="number" name="days" id="days" min="1" max="6"><br>
 
-        <input type="button" value="Send"><br>
+        <input type="button" value="Send" onclick="setAction()"><br>
     </form>
-    <div id="response"></div>
+    <br>
+    <div id="cidade"></div><br>
+    <div id="response"></div><br>
 
 
     <meu-footer></meu-footer>
