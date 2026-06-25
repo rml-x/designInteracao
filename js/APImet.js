@@ -8,6 +8,8 @@
 // a proxima que entao traz as informações meteorologicas.
 // ao inves do usuario precisar introduzir o id da cidade.
 
+let cityCodePersistencia = 0;
+
 function setSearch(form) {
 
     const cityNameInput = document.getElementById("CityName");
@@ -29,6 +31,7 @@ function setSearch(form) {
         return data.json();
     })
     .then((json) => {
+
        
         if (json.length === 0) {
             throw new Error("cidade não encontrada!!");
@@ -49,7 +52,7 @@ function setSearch(form) {
 
         const finalHtml = htmlTemplate.join('');
         document.getElementById('cidade').innerHTML = finalHtml;
-
+        
     })
     .catch(error => {
         console.error(error);
@@ -61,6 +64,9 @@ function setSearch(form) {
 
 
 function setAction(cityCode, CityName) {
+
+    cityCodePersistencia = cityCode;
+
 
     const cityNameLocal = document.getElementById('CityName').value = CityName;
     const daysInput = document.getElementById("days");
@@ -85,21 +91,31 @@ function setAction(cityCode, CityName) {
     })
     .then((json) => {
 
-        if (json.length === 0) {
+        if (!json.cidade) {
             throw new Error("sem resultado!!");
         }
 
-        const cabecalho = `<strong>${json.cidade} - ${json.estado}, atualizado em: ${json.atualizado_em}</strong><br>`;
+        const cabecalho = `<strong>${json.cidade} - ${json.estado}, atualizado em: ${json.atualizado_em}</strong><br><hr>`;
 
         const htmlTemplate = json.clima.map( item => {
             return `
 
-            <div class="previsao-card")">
-           <p> <strong> Data: ${item.data} </strong> <br>
-            Condição: ${item.condicao_desc}<br>
-            Temperatura Mínima: ${item.min}<br>
-            Temperatura Máxima: ${item.max}<br>
-            Indice UV: ${item.indice_uv}</p>
+            <style>
+                .previsao-card{
+                    margin-bottom:20px;
+                    background-color:#3453;
+                    border-radius:10px;
+                }
+            </style>
+
+            <div class="previsao-card">
+                <p> 
+                    <strong> Data: ${item.data} </strong><br>
+                    Condição: ${item.condicao_desc}<br>
+                    Temperatura Mínima: ${item.min} ºC<br>
+                    Temperatura Máxima: ${item.max} ºC<br>
+                    Indice UV: ${item.indice_uv}<br>
+                </p><br>
             </div>
             `;
         });
@@ -113,3 +129,9 @@ function setAction(cityCode, CityName) {
     });
     return false;
 }
+
+document.getElementById('days').addEventListener('input', () => {
+    if (cityCodePersistencia !== 0) {
+        setAction(cityCodePersistencia, document.getElementById('CityName').value);
+    }
+});
