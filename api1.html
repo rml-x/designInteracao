@@ -20,6 +20,44 @@
         #cidade:hover{
             border: 1px solid #050518;
         }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px; 
+            gap: 10px;       
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px; 
+            font-size: 16px;    
+         
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+    
+        input[type="number"]:focus,
+        input[type="text"]:focus {
+            border-color: #050518; 
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(5, 5, 24, 0.2); 
+            outline: none;
+        }
+
+        input[type="number"] {
+            max-width: 120px;
+        }
+
     </style>
     <meu-header></meu-header>
 
@@ -30,10 +68,9 @@
 
     <form>
         Dias(obrigatório):<br><input type="number" name="days" id="days" min="1" max="6" required>
-        <br>
-
+        
         Nome da cidade:<br><input type="text" id="CityName" onkeyup="setSearch()"><br>
-        <div id="cidade"></div><br>
+        <div id="cidade"></div>
 
     </form>
     <br>

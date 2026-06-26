@@ -109,6 +109,7 @@ function setAction(cityCode, CityName) {
             </style>
 
             <div class="previsao-card">
+            <br>
                 <p> 
                     <strong> Data: ${item.data} </strong><br>
                     Condição: ${item.condicao_desc}<br>

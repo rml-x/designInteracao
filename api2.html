@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="estilo/estilo.css">
 
     <style>
-       
-     img {
-        max-width: 100%;
-        height: auto;
+        img {
+            max-width: 100%;
+            height: auto;
         }
-      
+
+        .btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: bold;
+        transition: background 0.2s;
+        }
+        .btn:hover { background: #1d4ed8; }
+
     </style>
 </head>
 <body>
@@ -20,6 +33,7 @@
 
     <main>
         <div id="response"></div><br>
+        <button class="btn" id="btn">Atualizar Página<button>
         
     </main>
 
