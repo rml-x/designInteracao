@@ -119,7 +119,7 @@ function setAction(cityCode, CityName) {
             </div>
             `;
         });
-
+        
         const finalHtml = cabecalho + htmlTemplate.join('');
         document.getElementById('response').innerHTML = finalHtml;
     })

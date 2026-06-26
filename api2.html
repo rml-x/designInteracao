@@ -4,88 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API 2</title>
+    <link rel="stylesheet" href="estilo/estilo.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+       
+     img {
+        max-width: 100%;
+        height: auto;
         }
-        
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px 30px;
-        }
-        .article-card, .sidebar {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-        }
-        .article-card {
-            flex: 1 1 60%;
-        }
-        .article-card h2 {
-            margin-top: 0;
-        }
-        .article-card p {
-            margin-bottom: 15px;
-        }
-        .sidebar {
-            flex: 1 1 30%;
-        }
-        .sidebar h3 {
-            margin-top: 0;
-        }
-        .article-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .article-list li {
-            border-bottom: 1px solid #e5e5e5;
-            padding: 10px 0;
-        }
-        .article-list li:last-child {
-            border-bottom: none;
-        }
-        footer {
-            background-color: #222;
-            color: #bbb;
-            text-align: center;
-            padding: 15px 30px;
-        }
+      
     </style>
 </head>
 <body>
     <meu-header></meu-header>
 
     <main>
-        <section class="article-card" id="top-stories">
-            <h2>Top Story: Local Community Launches New Green Initiative</h2>
-            <p>Residents and volunteers gathered this morning to unveil a major environmental cleanup campaign that aims to improve local parks and riverbanks.</p>
-            <p>The initiative includes new recycling programs, tree planting, and community workshops designed to keep neighborhoods clean and sustainable.</p>
-        </section>
-        <aside class="sidebar">
-            <h3>Latest News</h3>
-            <ul class="article-list">
-                <li><strong>City Council</strong> approves budget for public transportation.</li>
-                <li><strong>New Cafe</strong> opens downtown with organic menu.</li>
-                <li><strong>Sports</strong> team advances to regional championship.</li>
-                <li><strong>Weather</strong> expected to stay sunny through the weekend.</li>
-            </ul>
-        </aside>
-        <section class="article-card" id="world">
-            <h2>World: Diplomatic Talks Continue for Climate Agreement</h2>
-            <p>Delegates from over 50 countries remain in negotiation for a new international climate treaty aimed at reducing emissions and increasing renewable energy usage.</p>
-        </section>
-        <section class="article-card" id="technology">
-            <h2>Technology: New Smartphone Released with Advanced Camera</h2>
-            <p>The latest handset from a major manufacturer features improved low-light photography and a faster processor for everyday performance.</p>
-        </section>
+        <div id="response"></div><br>
+        
     </main>
 
     <meu-footer></meu-footer>
@@ -93,6 +28,8 @@
     <script src="js/footer.js"></script>
 
     <script src="js/header.js"></script>
+
+    <script src="js/API2.js"></script>
 
 </body>
 </html>
